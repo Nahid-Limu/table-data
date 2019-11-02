@@ -24,6 +24,7 @@ class TableController extends Controller
         $name = $request->name;
         $columns = DB::getSchemaBuilder()->getColumnListing($name);
         $table_data = DB::table($name)->get();
+        //dd($table_data);
         return view('table')->with( compact('tables','name','columns','table_data'));;
        
         

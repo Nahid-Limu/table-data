@@ -40,7 +40,13 @@
           <input type="hidden" name="tb_name" value="{{$name}}">
           <thead>
             <tr>
+                <th>Action</th>
               @foreach ($columns as $c)
+                  {{--  fristCloum is for checkbox value  --}}
+                  @php
+                      $fristCloum = $columns['0'];
+                  @endphp
+                  {{--  fristCloum is for checkbox value  --}}
                   <th>
                     {{$c}}
                     <br>
@@ -53,8 +59,9 @@
               
              @foreach ($table_data as $td)
                 <tr>
+                  <td><input type="checkbox" value="{{$td->$fristCloum }}"></td>
                     @foreach ( $columns as $c)
-                    
+                        
                         <td>{{$td->$c}}</td>
                         
                     @endforeach
