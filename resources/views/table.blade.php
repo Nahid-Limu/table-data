@@ -35,7 +35,8 @@
             
         <form action="{{route('add')}}" method="post">
           @csrf
-          <button type="submit" class="btn btn-sm btn-success pull-right">add</button>
+          <button type="submit" class="btn btn-sm btn-info pull-right" name="action" value="Edit">Edit</button>
+          <button type="submit" class="btn btn-sm btn-success pull-right" name="action" value="add">add</button>
         <table class="table table-striped">
           <input type="hidden" name="tb_name" value="{{$name}}">
           <thead>

@@ -8,6 +8,19 @@ class TableController extends Controller
 {
     public function index()
     {
+        //sesson data
+
+        // $Array["arrayName"]["key"]="value"; 
+        // session(['sd' => $Array]);
+        // session(['key1' => 'value1']);
+        // $data =session()->all();
+
+        //($data['sd']['arrayName']['key']);
+
+        // session()->pull('key1');
+        // dd(session()->all());
+
+        //sesson data
         
         //$columns = DB::getSchemaBuilder()->getColumnListing('bank');
         $tables = DB::select('SHOW TABLES');
@@ -33,7 +46,7 @@ class TableController extends Controller
     public function add(Request $request)
     {
         //return $request->tb_name;
-
+        return $request->all();
         $columns = DB::getSchemaBuilder()->getColumnListing($request->tb_name);
         foreach ($columns as $key => $value) {
            
